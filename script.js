@@ -22,7 +22,7 @@ $(document).ready(function(){
 		}else if(seconds === "00"){
 			colorRed();
 		}
-		return [clock, dT] ;
+		return [clock, dT];
 	}
 
 	function displayTime(){	
@@ -31,11 +31,11 @@ $(document).ready(function(){
 
 	function colorBlue(){
 		$('.clock').addClass('blue-numbers');
-		setInterval(colorBlack,60000);
+		setTimeout(colorBlack,60000);
 	}
 	function colorRed(){
 		$('.clock').addClass('red-numbers');
-		setInterval(colorBlack,5000);
+		setTimeout(colorBlack,5000);
 	}
 	function colorBlack(){
 		$('.clock').removeClass('red-numbers blue-numbers');
@@ -44,17 +44,25 @@ $(document).ready(function(){
 	$('.freeze-button').click(function(){
 		clicks++;
 		var differential;
-		if(clicks%2 === 1){
+		var clear;
+
+		if(clicks%2){
 			clearInterval(clockRefresh);
 			timeStop = time()[1];
-			$('#freeze-time').text('');
-			
+
 		}else{
+			
 			clockRefresh = setInterval(displayTime,1000);
 			timeStart = time()[1];
-			differential = Math.round((10*(timeStart - timeStop)/1000))/10;
-			console.log((differential));
-			$('#freeze-time').text('The clock was stopped for '+differential+' seconds');
+			differential = Math.round((timeStart - timeStop)/100)/10;
+			if(differential <= 1){
+				$('#freeze-time').text('The clock was stopped for '+differential+' second');	
+			}else{
+				$('#freeze-time').text('The clock was stopped for '+differential+' seconds');
+			}
+			setTimeout(function(){
+				$('#freeze-time').text('');
+			},5000)
 		}
 		
 	});
