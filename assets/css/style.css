@@ -1,12 +1,16 @@
 /* line 4, ../compass/sass/style.scss */
 #clock-container {
-  margin: 20% auto 1%;
+  margin: 3% auto 1%;
   text-align: center;
   font-size: 80px;
 }
 /* line 8, ../compass/sass/style.scss */
 #clock-container .clock {
   display: inline;
+  color:white;
+  border: 10px solid #000080;
+  border-radius: 50px;
+  padding:20px;
 }
 /* line 12, ../compass/sass/style.scss */
 #clock-container #ampm {
@@ -21,6 +25,10 @@
 /* line 19, ../compass/sass/style.scss */
 #freeze button {
   font-size: 40px;
+  border-radius:10px;
+  background-color:#000080;
+  color:#cf5300;
+  margin-top: 20px;
 }
 
 /* line 23, ../compass/sass/style.scss */
