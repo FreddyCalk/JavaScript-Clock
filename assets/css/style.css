@@ -1,6 +1,6 @@
 /* line 4, ../compass/sass/style.scss */
 #clock-container {
-  margin: 3% auto 1%;
+  margin: 40px auto 15px;
   text-align: center;
   font-size: 80px;
 }
@@ -10,11 +10,11 @@
   color:white;
   border: 10px solid #000080;
   border-radius: 50px;
-  padding:20px;
+  padding:10px;
 }
 /* line 12, ../compass/sass/style.scss */
 #clock-container #ampm {
-  margin-left: 1%;
+  margin-left: 10px;
 }
 
 /* line 16, ../compass/sass/style.scss */
