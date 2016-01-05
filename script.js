@@ -49,7 +49,7 @@ $(document).ready(function(){
 		if(clicks%2){
 			clearInterval(clockRefresh);
 			timeStop = time()[1];
-
+			$('.freeze-button').text('Start the Clock!');
 		}else{
 			
 			clockRefresh = setInterval(displayTime,1000);
@@ -60,6 +60,7 @@ $(document).ready(function(){
 			}else{
 				$('#freeze-time').text('The clock was stopped for '+differential+' seconds');
 			}
+			$('.freeze-button').text('Freeze the Clock!');
 			setTimeout(function(){
 				$('#freeze-time').text('');
 			},5000)
